@@ -7,4 +7,4 @@ env:
 services:
     - docker
 script:
-    - docker run --rm -e "BUILD_PASSWORD=$BUILD_PASSWORD" -e "BUILD_KEY=$BUILD_KEY" -e "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER" -u travis fgimenez/snapd-daily-build
+    - docker run --rm -e "BUILD_PASSWORD=$BUILD_PASSWORD" -e "BUILD_KEY=$BUILD_KEY" -e "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER" -u travis ubuntucore/snapd-daily-build
