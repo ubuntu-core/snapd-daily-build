@@ -16,7 +16,7 @@ rm -rf ../*.deb ../*.changes ../*.dsc ../*.tar.xz ../*.upload
 
 dch --distribution xenial -m --local +ppa${TRAVIS_BUILD_NUMBER}.$(echo $GIT_COMMIT|cut -b1-8)- Daily release to the PPA
 
-echo -n "$BUILD_PASSWORD" > ${PWD}/build_password
+echo -n "$BUILD_PASSWORD" | base64 -d > ${PWD}/build_password
 echo -n "$BUILD_KEY" > ${PWD}/build_key
 gpg-agent --daemon --enable-ssh-support
 gpg --import ${PWD}/build_key
