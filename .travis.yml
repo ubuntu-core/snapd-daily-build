@@ -3,10 +3,10 @@ before_install:
 
 env:
     global:
-        - secure: "hQaBJL5D5WGxEzvrXFk6gB88SRnCQfT2QxScnXA2qxZoMz6PTmISg4xngQGOKXlMmsvb5Ua2T8/E5is2rt5bYaIGbat9s2p/9OwBSUVd3kPF9vf9dqtn7gAYzxsnRLtuXXj942dovuiK22VdHaeRO+RtYV3A5Qm1gG9hsMFzaAHgU78KytHxiQYpHxwOB2nZqRQm5C9l2HSNTU/quGMvvcesF0/Rqa62tXppTk5xTFvMJwVquU1m48DzehORynxO6YhKDfuXqyTfgQ1AF9Q3Yq4R2s1GNhHYLubzStCuFjQDiIS9IUmfda/VRqtpVaMvbSZa5K3DmQOegZWdyJANtsc1yS2bBvx9UMTDEPvfR1SxphSbc6PSex1ni2OulqBTsLJjgZ2J9OLN1Rp7Lq82KHASemO6qcKWbNWl4ztlIpzEGgcZuama6TGIQfHEOj1/xmYOK0Qlu6Y097IYlM2vSAX8+3i3xwTvaKbA5fmP9sRej6nYx6KHCoi4nRW1pVf8D4arZGKL4CHOjlwKWTkle4jWWLotW+jWXwSHJEtWSY24wXIRyZdGDZDIxnJpN50JbwAO4ImiUBPt55OKS8V1sXSp9vrIK/Xtg+EHYgyI26CnZFA3pw0FzFCiQbA/G6GM6Yg9q6mFJZfharF4jrl2FfKwBP/HeP3z/rEzdUsFWas="
+        - secure: "jnEHappJziaTbwGwQ5mVJxiSyFVPEyIRgnydbe5ia0pA6z+puk35ltnH8DDGRruH/nxe+ONZIvtw4iw7GGlRcHFXjHV8Atz9bZvXnC1VhOpzEZx/vGTOEKlLvT4cyYiA4D+bGfO3aVHJAzF+x3wgtZsC3DoVNtYEqTN01OPDKydZ1vMcb3mzGUS6V0OpnVZvrFSegVS3ocKowgDqvS97mSCEO4MUdVm4WadY0Eez497j3Ght5hSUnPZBulaw1BbhJ1b1lYHDYMaBgnCMQu89pGzHcjuU3/Te9h3dJgptDVZkojgvpWCUzdtKY6kS5Ha9krI5MdPubAxrsGHFX8V5z+xiGTAJnEAIu4gyzE9S8epeycCjYIZUWgMCtMwxBXDFi6YW4Mg07hWX0GU8E8WAe4zPEmnl/KePULtEkw/8JBUgVJxdHtMda9yQBOeG0tWGsqupeUm9HavFxBcxgA8524IgzuO68w1hXM6j3ILViLBKTP2a0hM5qUy8mnIw9DBnQ7IE521c8A9JR7xAIwSr42zC9wxXxWgdSjPa/CjruGh/R0SYb2s8kFs/rvFCEIiSuMSVxvR6IUL+cByqZRFsPidDNA0Ol+1L+QPh5lTaKSUzVegiEwRLFmGsz/Rd4j15JdplvatTQjDOXBWxJ8hU/+eJG/mKx6AKznHwj2kaNnM="
 
 services:
     - docker
 
 script:
-    - docker run --rm -e "BUILD_PASSWORD=$(echo -n $BUILD_PASSWORD | base64)" -e "BUILD_KEY=$(cat snappy-m-o-private.key)" -e "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER" -u travis ubuntucore/snapd-daily-build
+    - docker run --rm -e "BUILD_PASSWORD=$BUILD_PASSWORD" -e "BUILD_KEY=$(cat snappy-m-o-private.key)" -e "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER" -u travis ubuntucore/snapd-daily-build
