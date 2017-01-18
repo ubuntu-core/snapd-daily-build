@@ -19,7 +19,7 @@ ENV GOPATH=/go
 ENV SNAPCORE_PATH=${GOPATH}/src/github.com/snapcore
 ENV SNAPD_PATH=${SNAPCORE_PATH}/snapd
 
-RUN mkdir -p $SNAPCORE_PATH && chown -R travis $SNAPCORE_PATH
+RUN mkdir -p $SNAPCORE_PATH && chown -R travis $GOPATH
 
 COPY ./entrypoint.sh /entrypoint.sh
 
