@@ -1,5 +1,5 @@
 #!/bin/bash
-#set -e
+set -e
 
 git clone https://github.com/snapcore/snapd ${SNAPD_PATH}
 
