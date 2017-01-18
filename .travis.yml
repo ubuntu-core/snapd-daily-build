@@ -9,4 +9,4 @@ services:
     - docker
 
 script:
-    - docker run --rm -e "BUILD_PASSWORD=$(echo $BUILD_PASSWORD | base64)" -e "BUILD_KEY=$(cat snappy-m-o-private.key)" -e "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER" -u travis ubuntucore/snapd-daily-build
+    - docker run --rm -e "BUILD_PASSWORD=$(echo -n $BUILD_PASSWORD | base64)" -e "BUILD_KEY=$(cat snappy-m-o-private.key)" -e "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER" -u travis ubuntucore/snapd-daily-build
