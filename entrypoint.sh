@@ -26,5 +26,4 @@ chmod +x sign.sh
 dpkg-buildpackage -S --force-sign -kDB810A52 -p${PWD}/sign.sh
 lintian
 
-# dput ppa:snappy-dev/edge ../*.changes
-dput ppa:testppa/testppa2 ../*.changes
+dput ppa:snappy-dev/edge ../*.changes
